@@ -40,8 +40,8 @@ class FlyingRobot(BaseRobot):
         self.coords = coords
         if coords is None:
             self.coords = [0, 0, 0]
-        elif len(coords) == 2:
-            self.coords = [coords[0], coords[1], 0]
+        if len(self.coords) == 2:
+            self.coords.append(0)
 
     def go_up(self, step: int = 1) -> None:
         self.coords[2] += step
